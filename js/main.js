@@ -20,17 +20,17 @@ async function NBADATA()
     const settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://free-nba.p.rapidapi.com/players?page=0",
+        "url": "https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=alphabetical",
         "method": "GET",
         "headers": {
             "X-RapidAPI-Key": "9fc43591cemsh6ed4d4ee703b818p14824ajsn381a6a9e8bd4",
-            "X-RapidAPI-Host": "free-nba.p.rapidapi.com"
+            "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com"
         }
     };
     
     $.ajax(settings).done(function(response) {
         console.log(response);
-        $.each(response.data, function(i, people) {
+        $.each(response, function(i, people) {
             //$people.append('<li>name: ' + people.first_name + "</li>");
             $people.append(MakeCharacter(people));            
         });
@@ -38,6 +38,8 @@ async function NBADATA()
     $.ajax(settings).fail(function(){
         alert("Slow Down");
     });
+    
+    
 }
 function MakeCharacter(Person) {
     var Character = CharacterCreate(Person);
@@ -49,7 +51,7 @@ function MakeCharacter(Person) {
 
 //Creates a div and adds the character image and text to it
 function CharacterCreate(Person) {
-    var image = createImage("200px", "300px");
+    var image = createImage(Person.thumbnail, "200px", "300px");
     var Character = document.createElement("div");
     var CharacterText = MakeDescription(Person);
     Character.setAttribute("class", "Person");
@@ -60,11 +62,11 @@ function CharacterCreate(Person) {
 }
 
 //creates an image for the Character
-function createImage(width, height) {
-    //var imageFile = "Image/" + name + ".png";
+function createImage(name, width, height) {
+    var imageFile = name;
     var image = document.createElement("img");
     if (image != null && image != undefined) {
-        //image.src = imageFile;
+        image.src = imageFile;
         image.style.width = width;
         image.style.height = height;
     }
