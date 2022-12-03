@@ -1,6 +1,12 @@
 import { MY_API_KEY } from './config.js';
 let covid19data;
 
+function Test(Id, Title, Type) { // constructor header (signature)
+    this.Id = Id;
+    this.Title = Title;
+    this.Type = Type;
+}
+
 (function onLoad()
 {
     // set a function for each button
@@ -20,19 +26,19 @@ async function NBADATA()
     const settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=alphabetical",
+        "url": "https://moviesdatabase.p.rapidapi.com/titles/x/upcoming",
         "method": "GET",
         "headers": {
             "X-RapidAPI-Key": "9fc43591cemsh6ed4d4ee703b818p14824ajsn381a6a9e8bd4",
-            "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com"
+            "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com"
         }
     };
     
     $.ajax(settings).done(function(response) {
         console.log(response);
-        $.each(response, function(i, people) {
+        $.each(response.results, function(i, people) {
             //$people.append('<li>name: ' + people.first_name + "</li>");
-            $people.append(MakeCharacter(people));            
+            $people.append(MakeCharacter(people));           
         });
     });
     $.ajax(settings).fail(function(){
@@ -51,7 +57,12 @@ function MakeCharacter(Person) {
 
 //Creates a div and adds the character image and text to it
 function CharacterCreate(Person) {
-    var image = createImage(Person.thumbnail, "200px", "300px");
+    if(Person.primaryImage != null){
+        var image = createImage(Person.primaryImage.url, "200px", "300px");
+    }
+    else{
+        var image = createImage(Person.primaryImage, "200px", "300px");
+    }
     var Character = document.createElement("div");
     var CharacterText = MakeDescription(Person);
     Character.setAttribute("class", "Person");
@@ -78,16 +89,14 @@ function createImage(name, width, height) {
 function MakeDescription(Person) {
     var List = document.createElement("ul");
     List.setAttribute("class", "UnorderedList")
-    var count = 0;
-    for (var Key in Person) {
-        //if (count == 0) { }
-        //else {
+    var NewTest = new Test(Person.id, Person.titleText.text, Person.titleType.text)
+    console.log(NewTest);
+        var count = 0;
+        for (var Key in NewTest) {
             var Li = document.createElement("li");
-            var Text = document.createTextNode(Key + ": " + Person[Key]);
+            var Text = document.createTextNode(Key + ": " + NewTest[Key]);
             Li.appendChild(Text);
             List.appendChild(Li);
-        //}
-        count++;
+        }
+        return List;
     }
-    return List;
-}
