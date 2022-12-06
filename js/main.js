@@ -14,24 +14,18 @@ function Test(Id, Type, Street, City, State, Postal, Price) { // constructor hea
 
 (function onLoad()
 {
-    // set a function for each button
-    setButtonFunctions();
-
-    NBADATA();
 })();
 
-function setButtonFunctions()
+$('#btnZip').click(function()
 {
-
-}
-
-async function NBADATA()
-{
+    var Zipcode = $("#Zipcode").val();
+    console.log(Zipcode);
     var $people = $("#people");
+    
     const settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://us-real-estate.p.rapidapi.com/v2/for-rent-by-zipcode?zipcode=48278&limit=10&sort=lowest_price",
+        "url": "https://us-real-estate.p.rapidapi.com/v2/for-rent-by-zipcode?zipcode="+Zipcode+"&limit=10&sort=lowest_price",
         "method": "GET",
         "headers": {
             "X-RapidAPI-Key": "9fc43591cemsh6ed4d4ee703b818p14824ajsn381a6a9e8bd4",
@@ -51,7 +45,8 @@ async function NBADATA()
     });
     
     
-}
+})
+
 function MakeCharacter(Person) {
     var Character = CharacterCreate(Person);
     //Character.appendChild(MakeFavoriteButton(Person));
@@ -70,7 +65,7 @@ function CharacterCreate(Person) {
     }
     var Character = document.createElement("div");
     var CharacterText = MakeDescription(Person);
-    Character.setAttribute("class", "Person");
+    Character.setAttribute("class", "house");
     Character.setAttribute("id", Person + "id");
     Character.appendChild(image);
     Character.appendChild(CharacterText);
