@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" style="background: #ffffff;"><head>
+<html lang="en">
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>realestate</title>
@@ -7,9 +8,9 @@
     <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="css/styles.min.css">
 </head>
-<body class="text-start d-xl-flex justify-content-xl-center align-items-xl-center" style="font-size: 20px;font-weight: bold;margin-left: 0px;color: var(--bs-black);border-top-left-radius: 0px;position: relative;margin-top: -42px;padding-top: 0px;background: linear-gradient(black, white);height: 650px;border-bottom-color: rgba(33,37,41,0);">
-    <div class="container d-xl-flex justify-content-xl-center align-items-xl-start" style="margin-top: 0px;margin-right: -1px;margin-bottom: -50px;margin-left: 93px;">
-        <div class="row" style="background: #ffffff;border-top-left-radius: 25px;border-top-right-radius: 25px;border-bottom-right-radius: 25px;border-bottom-left-radius: 25px;">
+<body >
+    <div  class="container align-items-xl-start text-start d-xl-flex justify-content-xl-center align-items-xl-center" style="margin-top: 10%;margin-right: 15%;margin-bottom: -50px;margin-left: 15%;">
+        <div id="LoginDiv" class="row" style="background: #ffffff;border-top-left-radius: 25px;border-top-right-radius: 25px;border-bottom-right-radius: 25px;border-bottom-left-radius: 25px;">
             <div class="col-md-6 col-xl-5" style="background: url(&quot;images/BcaKbjBni.jpg&quot;) center / contain no-repeat;width: 450px;height: 405px;">
                 <div></div>
             </div>
@@ -33,14 +34,63 @@
                         <p style="font-size: 15px;margin-top: 10px;color: var(--bs-secondary);text-align: center;width: 450px;">Need an Account?&nbsp;
                             <a href="#">Register</a>
                         </p>
-                            <p style="font-size: 15px;margin-top: -14px;color: var(--bs-secondary);text-align: center;width: 450px;">Forgor?&nbsp;
-                                <a href="#">Reset Password</a>
-                            </p>
-                        </div>
+                        <p style="font-size: 15px;margin-top: -14px;color: var(--bs-secondary);text-align: center;width: 450px;">Forgor?&nbsp;
+                            <a href="#">Reset Password</a>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="js/bootstrap.min.js"></script>
-    </body>
-    </html>
+    </div>
+    <div id="AcodeDiv" class="register">
+        <header class="header1">
+            <div>
+                <span>Authentication Code</span>
+            </div>
+        </header>
+        <div>
+            <label class="form-label form-label form-label form-label">Authencation Code:</label><br />
+            <input id="authCode" type="text" name="authCode" placeholder="Enter Authencation Code" />
+        </div>
+        <div>
+            <input class="form-control-plaintext" type="text" />
+        </div>
+        <button id="btnSubmit" class="btn btn-info">Submit</button>
+        <div>Go Back to <a href="#"> Login </a></div>
+    </div>
+    <div id="RegisterDiv" class="register">
+        <header class="header">
+            <div>
+                <span>Create An Account</span>
+            </div>
+        </header>
+        <div>
+            <label class="form-label form-label form-label form-label form-label">First Name:</label><br>
+            <input type="text" id="Firstname" name="FirstName" placeholder="Enter First Name">
+        </div>
+        <div>
+            <label class="form-label form-label form-label form-label form-label">Email:</label><br>
+            <input type="email" id="Email" name="Email" placeholder="Enter Email">
+        </div>
+        <div>
+            <label class="form-label form-label form-label form-label form-label">Username:</label><br>
+            <input type="text" id="Username" name="Username" placeholder="Enter Username">
+        </div>
+        <div>
+            <label class="form-label form-label form-label form-label form-label">Password:</label><br>
+            <input type="text" id="Password" name="Password" placeholder="Enter Password">
+        </div>
+        <div>
+            <input type="text" class="form-control-plaintext">
+        </div>
+        <button class="btn btn-info" id="btnRegister">Register</button>
+        <div>
+            <span>If You Already Made An Account: </span>
+            <a href="#">Login</a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="js/Login.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
