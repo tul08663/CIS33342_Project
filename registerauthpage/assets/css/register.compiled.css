@@ -1,0 +1,24 @@
+body {
+  background-image: url(../../assets/img/registerbackground.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.register {
+  background-color: lightgreen;
+  text-align: center;
+  border: solid;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 10%;
+}
+
+.header {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.header1 {
+  font-size: 30px;
+  font-weight: bold;
+}
