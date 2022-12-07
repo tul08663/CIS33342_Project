@@ -32,7 +32,7 @@
                     </div>
                     <div>
                         <p style="font-size: 15px;margin-top: 10px;color: var(--bs-secondary);text-align: center;width: 450px;">Need an Account?&nbsp;
-                            <a class="GoToRegister" href="register.html">Register</a>
+                            <a class="GoToRegister" href="#">Register</a>
                         </p>
                         <p style="font-size: 15px;margin-top: -14px;color: var(--bs-secondary);text-align: center;width: 450px;">Forgor?&nbsp;
                             <a class="GoToReset" href="#">Reset Password</a>
@@ -40,6 +40,53 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div id="AcodeDiv" class="register">
+        <header class="header1">
+            <div>
+                <span>Authentication Code</span>
+            </div>
+        </header>
+        <div>
+            <label class="form-label form-label form-label form-label">Authencation Code:</label><br />
+            <input id="authCode" type="text" name="authCode" placeholder="Enter Authencation Code" />
+        </div>
+        <div>
+            <input class="form-control-plaintext" type="text" />
+        </div>
+        <button id="btnSubmit" class="btn btn-info">Submit</button>
+        <div>Go Back to <a href="#"> Login </a></div>
+    </div>
+    <div id="RegisterDiv" class="register">
+        <header class="header">
+            <div>
+                <span>Create An Account</span>
+            </div>
+        </header>
+        <div>
+            <label class="form-label form-label form-label form-label form-label">First Name:</label><br>
+            <input type="text" id="Firstname" name="FirstName" placeholder="Enter First Name">
+        </div>
+        <div>
+            <label class="form-label form-label form-label form-label form-label">Email:</label><br>
+            <input type="email" id="Email" name="Email" placeholder="Enter Email">
+        </div>
+        <div>
+            <label class="form-label form-label form-label form-label form-label">Username:</label><br>
+            <input type="text" id="Username" name="Username" placeholder="Enter Username">
+        </div>
+        <div>
+            <label class="form-label form-label form-label form-label form-label">Password:</label><br>
+            <input type="text" id="Password" name="Password" placeholder="Enter Password">
+        </div>
+        <div>
+            <input type="text" class="form-control-plaintext">
+        </div>
+        <button class="btn btn-info" id="btnRegister">Register</button>
+        <div>
+            <span>If You Already Made An Account: </span>
+            <a class="GoToLogin" href="#">Login</a>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
