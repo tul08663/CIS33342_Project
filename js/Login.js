@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    ShowLogin();
 });
 
 function ShowLogin(){
@@ -19,7 +18,7 @@ function ShowAcode(){
     $('#AcodeDiv').show();
     $('#RegisterDiv').hide();
 }
-
+/*
 $('.GoToRegister').click(function(){
     ShowRegister();
 })
@@ -27,3 +26,4 @@ $('.GoToRegister').click(function(){
 $('.GoToLogin').click(function(){
     ShowLogin();
 })
+*/
