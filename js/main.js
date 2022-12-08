@@ -1,5 +1,5 @@
 import { MY_API_KEY } from './config.js';
-let covid19data;
+
 
 function Test(Id, Type, Street, City, State, Postal, Price) { // constructor header (signature)
     this.Id = Id;
