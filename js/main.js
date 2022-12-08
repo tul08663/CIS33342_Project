@@ -28,7 +28,7 @@ $('#btnZip').click(function()
         "url": "https://us-real-estate.p.rapidapi.com/v2/for-rent-by-zipcode?zipcode="+Zipcode+"&limit=10&sort=lowest_price",
         "method": "GET",
         "headers": {
-            "X-RapidAPI-Key": "9fc43591cemsh6ed4d4ee703b818p14824ajsn381a6a9e8bd4",
+            "X-RapidAPI-Key": "MY_API_KEY",
             "X-RapidAPI-Host": "us-real-estate.p.rapidapi.com"
         }
     };
