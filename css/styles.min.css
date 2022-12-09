@@ -1,5 +1,5 @@
 body{background-image:url(../images/registerbackground.png);background-repeat:no-repeat;background-size:cover;margin: 0;padding: 0;border: 0;height: 100%;}
 .register{background-color:#90ee90;text-align:center;border:solid;margin:10% 20% 0}
 .header{font-size:40px;font-weight:700}.header1{font-size:30px;font-weight:700}
-.house{background-color:#90ee90;border:solid;margin-top:20px;margin-left:20px;padding:0 3% 0 3%;float:left;width:22%}
+.house{background-color:#90ee90;border:solid;margin-top:20px;margin-left:20px;padding:0 3% 0 3%;float:left;width:22%;height:500px;}
 .register2{background-color:#90ee90;text-align:center;border:solid;margin:10px 20% 0px}

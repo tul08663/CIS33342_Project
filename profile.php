@@ -42,6 +42,6 @@ $user = $app->UserDetails($_SESSION['user_id']);
           <div><span>Enter A Zipcode:</span></div><input id="Zipcode" type="number" placeholder="Enter Zipcode Here" />
       </div><button id="btnZip" class="btn btn-info">Submit</button>
   </div>
-  <div id="people"></div>
+  <div id="Houses"></div>
 </body>
 </html>
