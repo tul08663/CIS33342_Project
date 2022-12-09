@@ -20,7 +20,9 @@ $('#btnZip').click(function()
 {
     var Zipcode = $("#Zipcode").val();
     console.log(Zipcode);
-    var $people = $("#people");
+    var Houses = $("#Houses");
+
+
     
     const settings = {
         "async": true,
@@ -35,9 +37,9 @@ $('#btnZip').click(function()
     
     $.ajax(settings).done(function(response) {
         console.log(response);
-        $.each(response.data.home_search.results, function(i, people) {
+        $.each(response.data.home_search.results, function(i, house) {
             //$people.append('<li>name: ' + people.first_name + "</li>");
-            $people.append(MakeCharacter(people));           
+            Houses.append(MakeListing(house));           
         });
     });
     $.ajax(settings).fail(function(){
@@ -47,32 +49,24 @@ $('#btnZip').click(function()
     
 })
 
-function MakeCharacter(Person) {
-    var Character = CharacterCreate(Person);
-    //Character.appendChild(MakeFavoriteButton(Person));
-    //Character.appendChild(MakeRemoveButton(Person));
-    return Character;
-}
-
-
 //Creates a div and adds the character image and text to it
-function CharacterCreate(Person) {
-    if(Person.primary_photo != null){
-        var image = createImage(Person.primary_photo.href, "200px", "300px");
+function MakeListing(House) {
+    if(House.primary_photo != null){
+        var image = createImage(House.primary_photo.href, "200px", "300px");
     }
     else{
-        var image = createImage(Person.primary_photo, "200px", "300px");
+        var image = createImage(House.primary_photo, "200px", "300px");
     }
-    var Character = document.createElement("div");
-    var CharacterText = MakeDescription(Person);
-    Character.setAttribute("class", "house");
-    Character.setAttribute("id", Person + "id");
-    Character.appendChild(image);
-    Character.appendChild(CharacterText);
-    return Character;
+    var HouseDetails = document.createElement("div");
+    var CharacterText = MakeDescription(House);
+    HouseDetails.setAttribute("class", "house");
+    HouseDetails.setAttribute("id", House + "id");
+    HouseDetails.appendChild(image);
+    HouseDetails.appendChild(CharacterText);
+    return HouseDetails;
 }
 
-//creates an image for the Character
+//creates an image for the HouseDetails
 function createImage(name, width, height) {
     var imageFile = name;
     var image = document.createElement("img");
@@ -85,21 +79,21 @@ function createImage(name, width, height) {
 }
 
 //makes the text in an unordered list
-//it goes through every variable in the person and creates a list using them
-function MakeDescription(Person) {
+//it goes through every variable in the House and creates a list using them
+function MakeDescription(House) {
     var List = document.createElement("ul");
     List.setAttribute("class", "UnorderedList")
     var price = "null";
-    if(Person.list_price != null){
-        var price = "$"+Person.list_price;
+    if(House.list_price != null){
+        var price = "$"+House.list_price;
     }
-    else if(Person.list_price_max != null && Person.list_price_min != null) {
-        var price = "$"+Person.list_price_min +" - $"+ Person.list_price_max;
+    else if(House.list_price_max != null && House.list_price_min != null) {
+        var price = "$"+House.list_price_min +" - $"+ House.list_price_max;
     }
     else{
         var price = "To Be Determined";
     }
-    var NewTest = new Test(Person.listing_id, Person.description.type, Person.location.address.line, Person.location.address.city, Person.location.address.state, Person.location.address.postal_code, 
+    var NewTest = new Test(House.listing_id, House.description.type, House.location.address.line, House.location.address.city, House.location.address.state, House.location.address.postal_code, 
         price)
     console.log(NewTest);
         var count = 0;
