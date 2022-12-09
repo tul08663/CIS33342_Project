@@ -21,13 +21,14 @@ $('#btnZip').click(function()
     var Zipcode = $("#Zipcode").val();
     console.log(Zipcode);
     var Houses = $("#Houses");
+    Houses.empty();
 
 
     
     const settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://us-real-estate.p.rapidapi.com/v2/for-rent-by-zipcode?zipcode="+Zipcode+"&limit=10&sort=lowest_price",
+        "url": "https://us-real-estate.p.rapidapi.com/v2/for-rent-by-zipcode?zipcode="+Zipcode+"&limit=20&sort=lowest_price",
         "method": "GET",
         "headers": {
             "X-RapidAPI-Key": "MY_API_KEY",
