@@ -44,7 +44,7 @@ $('#btnZip').click(function()
         });
     });
     $.ajax(settings).fail(function(){
-        alert("Slow Down");
+        alert("Retry");
     });
     
     
